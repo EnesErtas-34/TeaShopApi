@@ -1,0 +1,34 @@
+﻿@model List<TeaShopApi.WebUI.Dtos.TestimonialDtos.ResultTestimonialDto>
+
+@{
+    var active = "";
+}
+<div class="clients_section layout_padding" id="testimonials">
+    <div id="custum_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            @foreach (var item in Model)
+            {
+                if (item.TestimonialID == 1) { active = "active"; } else { active = " "; }
+
+                <div class="carousel-item @active">
+                    <div class="container">
+                        <h1 class="clients_taital">Müşteri Yorumları</h1>
+                        <p class="clients_text">
+                            @item.TestimonialComment
+                        </p>
+                        <div class="client_img"><img src="@item.TestimonialImageUrl" style="height:75px;width:75px;border-radius:50%" /></div>
+                        <h1 class="louis_text">@item.TestimonialName</h1>
+
+                        <div class="border"></div>
+                    </div>
+                </div>
+            }
+        </div>
+        <a class="carousel-control-prev" href="#custum_slider" role="button" data-slide="next">
+            <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#custum_slider" role="button" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div>
+</div>

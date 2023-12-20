@@ -1,0 +1,63 @@
+﻿@model List<ResultSubscribeDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<div class="row">
+    <!-- [ sample-page ] start -->
+    <div class="col-sm-12">
+        <div class="card">
+
+            <div class="card-header">
+                <h5>Abone İşlemleri</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <tr>
+                        <th>#</th>
+                        <th>Mail </th>
+                        <th>Sil </th>
+                       
+                        <th>Güncelle</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.SubscribeID</td>
+                            <td>@item.Mail</td>
+                            <td><button onclick="deleteSubscribe(@item.SubscribeID)" type="submit" class="btn btn-outline-danger"><i class="fas fa-trash"></i> Sil</button></td>
+                            <td><a href="/Admin/Subscribe/UpdateSubscribe/@item.SubscribeID" class="btn btn-success">Güncelle</a></td>
+                        </tr>
+                    }
+                </table>
+                <a href="/Admin/Subscribe/CreateSubscribe/" class="btn btn-outline-primary">Yeni Abone Girişi</a>
+            </div>
+        </div>
+    </div>
+    <!-- [ sample-page ] end -->
+</div>
+
+<script>
+    function deleteSubscribe(id) {
+        Swal.fire({
+            title: 'Silmek istediğinize emin misiniz?',
+            text: 'Bu öğeyi silerseniz geri alamazsınız!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sil',
+            cancelButtonText: 'İptal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/Subscribe/DeleteSubscribe?id=" + id;
+            }
+        });
+    }
+</script>
+
+
+
+

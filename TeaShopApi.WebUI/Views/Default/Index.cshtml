@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+ 
+@await Component.InvokeAsync("_DefaultFeatureComponentPartial")
+   
+
+@await Component.InvokeAsync("_DefaultAboutComponentPartial")
+
+@await Component.InvokeAsync("_DefaultBookNowTableComponentPartial")
+  
+   @await Component.InvokeAsync("_DefaultDrinkListComponentPartial")
+  
+@await Component.InvokeAsync("_DefaultWhyChooseUsComponentPartial")
+  
+@await Component.InvokeAsync("_DefaultOurTeaShopComponentPartial")
+  
+@await Component.InvokeAsync("_DefaultAskedQuestionComponentPartial")
+ 
+@await Component.InvokeAsync("_DefaultTestimonialComponentPartial")
+   
+@await Html.PartialAsync("~/Views/Default/SendMessage.cshtml")
+
+   
+   
+  
+
+
+

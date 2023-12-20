@@ -1,0 +1,16 @@
+﻿@model UpdateSubscribeDto
+@{
+    ViewData["Title"] = "UpdateSubscribe";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<form method="post">
+    <input type="hidden" asp-for="SubscribeID" />
+    <label>Mail</label>
+    <input type="email" asp-for="Mail" class="form-control" id="floatingInput" placeholder="Mail Adresiniz..." required />
+    <br />
+
+    <button class="btn btn-success"><i class="fas fa-pen"></i> Abone Güncelle</button>
+</form>
+

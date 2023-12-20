@@ -1,0 +1,16 @@
+﻿@model CreateSubscribeDto
+@{
+    ViewData["Title"] = "CreateSubscribe";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<br />
+<form method="post">
+    <label>Mail</label>
+    <input type="email" asp-for="Mail" class="form-control" id="floatingInput" placeholder="Mail Adresiniz..." required />
+    <br />
+
+    <br />
+    <button class="btn btn-primary"><i class="fas fa-save"></i> Abone Ekle</button>
+</form>
+
